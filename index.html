@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweat &amp; Courage | Better Human Beings. Better Performers.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #c8962e;
+  --gold-light: #d4a439;
+  --gold-dark: #a67a1f;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #161616;
+  --bg-card: #1a1a1a;
+  --text-white: #ffffff;
+  --text-light: #cccccc;
+  --text-muted: #999999;
+  --border-subtle: rgba(255,255,255,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 40px;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.45em;
+  color: var(--text-white);
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  transition: color 0.3s;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-links .dropdown { position: relative; cursor: pointer; }
+.nav-links .dropdown::after {
+  content: '';
+  display: inline-block;
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--text-light);
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.nav-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--bg-primary);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.nav-cta:hover { background: var(--gold-light); }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+.nav-mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-white);
+  transition: 0.3s;
+}
+
+/* ===== HERO ===== */
+.hero {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.hero-content {
+  padding: 70px 0 70px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.hero-title .gold { color: var(--gold); }
+
+.hero-bar {
+  width: 50px;
+  height: 4px;
+  background: var(--gold);
+  margin: 20px 0 24px;
+}
+
+.hero-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-light);
+  max-width: 420px;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--bg-primary);
+  padding: 14px 24px;
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--text-white);
+  padding: 14px 24px;
+  border: 2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  border-color: var(--text-white);
+}
+
+.play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.play-icon svg {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+  margin-left: 2px;
+}
+
+.hero-image {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2520 40%, #1d1915 100%);
+  overflow: hidden;
+}
+
+.hero-image::after {
+  content: 'COURAGE';
+  position: absolute;
+  bottom: 40%;
+  right: 10%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: rgba(255,255,255,0.06);
+  letter-spacing: 0.15em;
+  pointer-events: none;
+}
+
+.hero-image-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30,25,20,0.9) 0%, rgba(40,35,25,0.7) 50%, rgba(20,18,15,0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-placeholder .silhouette {
+  width: 280px;
+  height: 350px;
+  background: radial-gradient(ellipse at center top, rgba(200,150,46,0.08) 0%, transparent 60%),
+              linear-gradient(180deg, rgba(60,50,40,0.5) 0%, rgba(30,25,20,0.8) 100%);
+  border-radius: 4px;
+}
+
+/* ===== OUR BELIEF ===== */
+.belief {
+  padding: 80px 0 0;
+  background: var(--bg-primary);
+}
+
+.belief-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.belief-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.belief-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.belief-title .strikethrough {
+  color: var(--gold);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.belief-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.belief-text p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.belief-text .underline-gold {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+.belief-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border-subtle);
+}
+
+.belief-card {
+  padding: 30px 24px;
+  text-align: center;
+  border-right: 1px solid var(--border-subtle);
+}
+
+.belief-card:last-child { border-right: none; }
+
+.belief-card-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.belief-card-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.belief-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.belief-card .card-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.belief-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.belief-banner {
+  margin-top: 50px;
+  padding: 18px 30px;
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.belief-banner p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.belief-banner .gold { color: var(--gold); }
+
+/* ===== WHO WE DEVELOP ===== */
+.develop {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+  margin-top: 80px;
+}
+
+.develop h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.develop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.develop-card {
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.develop-card-image {
+  height: 180px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  position: relative;
+}
+
+.develop-card-image.players-bg {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2520 60%, #1d1915 100%);
+}
+.develop-card-image.parents-bg {
+  background: linear-gradient(135deg, #141420 0%, #1a1a2e 60%, #16213e 100%);
+}
+.develop-card-image.leaders-bg {
+  background: linear-gradient(135deg, #1a1a1a 0%, #1d2d1a 60%, #15251a 100%);
+}
+
+.develop-card-body {
+  padding: 28px 24px;
+}
+
+.develop-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.develop-card-header svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--text-white);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.develop-card-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.develop-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.learn-more {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s;
+}
+
+.learn-more:hover { gap: 10px; }
+
+/* ===== ECOSYSTEM ===== */
+.ecosystem {
+  padding: 60px 0;
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ecosystem-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.ecosystem-label {
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.ecosystem-label h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.ecosystem-label-bar {
+  width: 35px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: 10px;
+}
+
+.ecosystem-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  flex: 1;
+}
+
+.ecosystem-item {
+  text-align: center;
+}
+
+.ecosystem-item-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecosystem-item-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.ecosystem-item h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.ecosystem-item p {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ===== TRUSTED BY ===== */
+.trusted {
+  padding: 50px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.trusted h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-light);
+}
+
+.trusted-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.trusted-logo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.trusted-logo:hover { opacity: 1; }
+
+.trusted-logo span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.trusted-logo .logo-accent {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ===== FOUNDER ===== */
+.founder {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  background: var(--bg-secondary);
+}
+
+.founder-image {
+  position: relative;
+  min-height: 380px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2520 50%, #1d1915 100%);
+  overflow: hidden;
+}
+
+.founder-image-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 30px;
+}
+
+.founder-image-placeholder .jersey-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+}
+
+.founder-content {
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.founder-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.founder-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3vw, 38px);
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.founder-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+
+.founder-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.founder-signature {
+  text-align: right;
+}
+
+.founder-signature .name {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1.2;
+}
+
+.founder-signature .role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.btn-outline-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--text-white);
+  padding: 12px 22px;
+  border: 2px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.btn-outline-play:hover { border-color: var(--gold); }
+
+/* ===== BOTTOM CTA ===== */
+.bottom-cta {
+  padding: 50px 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.bottom-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.bottom-cta h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2.2vw, 24px);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  max-width: 700px;
+}
+
+.bottom-cta h3 span { display: block; }
+
+.bottom-cta .nav-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .ecosystem-items {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .ecosystem-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+  .nav { padding: 0 24px; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-content {
+    padding: 50px 30px;
+    order: 2;
+  }
+  .hero-image {
+    order: 1;
+    height: 280px;
+  }
+
+  .belief-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .belief-cards {
+    grid-template-columns: 1fr;
+  }
+  .belief-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .belief-card:last-child { border-bottom: none; }
+
+  .develop-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .founder {
+    grid-template-columns: 1fr;
+  }
+  .founder-image { min-height: 260px; }
+  .founder-content { padding: 40px 30px; }
+  .founder-bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .founder-signature { text-align: left; }
+
+  .bottom-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .nav-inner { height: 60px; }
+
+  .hero { margin-top: 60px; }
+  .hero-content { padding: 36px 24px; }
+  .hero-title { font-size: 38px; }
+
+  .belief { padding: 50px 0 0; }
+  .belief-title { font-size: 26px; }
+
+  .ecosystem-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trusted-logos { gap: 20px; }
+  .trusted-logo span { font-size: 10px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .nav { padding: 0 16px; }
+
+  .hero-content { padding: 28px 16px; }
+  .hero-buttons { flex-direction: column; align-items: flex-start; }
+
+  .develop-grid { max-width: 100%; }
+
+  .ecosystem-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .founder-content { padding: 30px 16px; }
+
+  .bottom-cta { padding: 36px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">S W E A T &nbsp;&amp;&nbsp; C O U R A G E</a>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Framework</a></li>
+      <li><a href="#" class="dropdown">For</a></li>
+      <li><a href="#">Programmes</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Case Studies</a></li>
+    </ul>
+    <button class="nav-cta">Book a Conversation</button>
+    <button class="nav-mobile-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-label">Human Development Through Sport</p>
+    <h1 class="hero-title">
+      Better Human Beings.<br>
+      <span class="gold">Better Performers.</span>
+    </h1>
+    <div class="hero-bar"></div>
+    <p class="hero-desc">We develop players, parents and leaders through a proven framework that builds self-awareness, courage and standards to thrive under pressure and lead others.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn-gold">Explore the Framework <span>&rarr;</span></a>
+      <a href="#" class="btn-outline">
+        <span class="play-icon"><svg viewBox="0 0 12 12"><polygon points="3,1 10,6 3,11"/></svg></span>
+        Watch Drewe's Story
+      </a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder">
+      <div class="silhouette"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUR BELIEF ===== -->
+<section class="belief">
+  <div class="container">
+    <div class="belief-header">
+      <p class="belief-label">Our Belief</p>
+      <h2 class="belief-title">
+        Winning and Human Development<br>
+        <span class="strikethrough">Are Not Separate Journeys.</span><br>
+        They're the Same Journey.
+      </h2>
+    </div>
+    <div class="belief-body">
+      <div class="belief-text">
+        <p>Every day we choose between comfort and Sweat.</p>
+        <p>Every day we choose between fear and Courage.</p>
+        <p>Every choice shapes the human being.<br>
+        Every human being <span class="underline-gold">shapes performance</span>.</p>
+      </div>
+      <div class="belief-cards">
+        <div class="belief-card">
+          <div class="belief-card-icon">
+            <svg viewBox="0 0 36 36"><circle cx="18" cy="10" r="5"/><path d="M12 28 C12 20, 24 20, 24 28"/><line x1="18" y1="15" x2="18" y2="24"/></svg>
+          </div>
+          <h3>Sweat</h3>
+          <p class="card-subtitle">Choose effort over comfort.</p>
+          <p>The daily work. Discipline, standards and responsibility.</p>
+        </div>
+        <div class="belief-card">
+          <div class="belief-card-icon">
+            <svg viewBox="0 0 36 36"><rect x="8" y="8" width="20" height="20" rx="3"/><line x1="14" y1="18" x2="22" y2="18"/><line x1="18" y1="14" x2="18" y2="22"/></svg>
+          </div>
+          <h3>Courage</h3>
+          <p class="card-subtitle">Choose courage over fear.</p>
+          <p>The willingness to be real and to keep going when it's hard.</p>
+        </div>
+        <div class="belief-card">
+          <div class="belief-card-icon">
+            <svg viewBox="0 0 36 36"><circle cx="18" cy="12" r="4"/><circle cx="10" cy="20" r="3"/><circle cx="26" cy="20" r="3"/><path d="M14 16 L10 17 M22 16 L26 17 M14 24 L22 24"/></svg>
+          </div>
+          <h3>Results</h3>
+          <p class="card-subtitle">Better people. Better performers.</p>
+          <p>The people who consistently make those choices win in life and in sport.</p>
+        </div>
+      </div>
+    </div>
+    <div class="belief-banner">
+      <p>Every choice shapes the human being. <span class="gold">Every human being shapes performance.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO WE DEVELOP ===== -->
+<section class="develop">
+  <div class="container">
+    <h2>Who We Develop</h2>
+    <div class="develop-grid">
+      <div class="develop-card">
+        <div class="develop-card-image players-bg"></div>
+        <div class="develop-card-body">
+          <div class="develop-card-header">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21 C5 16 19 16 19 21"/></svg>
+            <h3>Players</h3>
+          </div>
+          <p>Building resilient, courageous young people who perform under pressure.</p>
+          <a href="#" class="learn-more">Learn More <span>&rarr;</span></a>
+        </div>
+      </div>
+      <div class="develop-card">
+        <div class="develop-card-image parents-bg"></div>
+        <div class="develop-card-body">
+          <div class="develop-card-header">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.5"/><path d="M3 21 C3 16 15 16 15 21"/><circle cx="17" cy="9" r="2.5"/><path d="M13 21 C13 17.5 21 17.5 21 21"/></svg>
+            <h3>Parents</h3>
+          </div>
+          <p>Helping parents create the right environment for young people to flourish.</p>
+          <a href="#" class="learn-more">Learn More <span>&rarr;</span></a>
+        </div>
+      </div>
+      <div class="develop-card">
+        <div class="develop-card-image leaders-bg"></div>
+        <div class="develop-card-body">
+          <div class="develop-card-header">
+            <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+            <h3>Leaders</h3>
+          </div>
+          <p>Developing the people responsible for culture, standards and human development.</p>
+          <a href="#" class="learn-more">Learn More <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ECOSYSTEM ===== -->
+<section class="ecosystem">
+  <div class="container">
+    <div class="ecosystem-inner">
+      <div class="ecosystem-label">
+        <h3>The S&amp;C<br>Ecosystem</h3>
+        <div class="ecosystem-label-bar"></div>
+      </div>
+      <div class="ecosystem-items">
+        <div class="ecosystem-item">
+          <div class="ecosystem-item-icon">
+            <svg viewBox="0 0 30 30"><rect x="6" y="3" width="18" height="24" rx="3"/><line x1="11" y1="23" x2="19" y2="23"/></svg>
+          </div>
+          <h4>The S&amp;C App</h4>
+          <p>Daily content and practical tools.</p>
+        </div>
+        <div class="ecosystem-item">
+          <div class="ecosystem-item-icon">
+            <svg viewBox="0 0 30 30"><polygon points="10,5 23,15 10,25"/></svg>
+          </div>
+          <h4>Live Sessions</h4>
+          <p>Expert-led sessions and Q&amp;A.</p>
+        </div>
+        <div class="ecosystem-item">
+          <div class="ecosystem-item-icon">
+            <svg viewBox="0 0 30 30"><path d="M5 23 L15 8 L25 23 Z" fill="none"/><circle cx="15" cy="18" r="3"/></svg>
+          </div>
+          <h4>Leadership Courses</h4>
+          <p>Deepen understanding. Build capability.</p>
+        </div>
+        <div class="ecosystem-item">
+          <div class="ecosystem-item-icon">
+            <svg viewBox="0 0 30 30"><circle cx="15" cy="10" r="5"/><path d="M7 26 C7 19 23 19 23 26"/><path d="M20 8 L25 5 M20 12 L25 15"/></svg>
+          </div>
+          <h4>Coach Education</h4>
+          <p>Develop coaches. Develop environments.</p>
+        </div>
+        <div class="ecosystem-item">
+          <div class="ecosystem-item-icon">
+            <svg viewBox="0 0 30 30"><circle cx="10" cy="12" r="4"/><circle cx="20" cy="12" r="4"/><path d="M5 24 C5 19 15 19 15 24 M15 24 C15 19 25 19 25 24"/></svg>
+          </div>
+          <h4>Community</h4>
+          <p>Connect. Share. Grow together.</p>
+        </div>
+        <div class="ecosystem-item">
+          <div class="ecosystem-item-icon">
+            <svg viewBox="0 0 30 30"><rect x="5" y="5" width="20" height="16" rx="2"/><polyline points="5 8 15 15 25 8"/></svg>
+          </div>
+          <h4>Resources</h4>
+          <p>Guides, templates and more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUSTED BY ===== -->
+<section class="trusted">
+  <div class="container">
+    <h3>Trusted by Leading Organisations</h3>
+    <div class="trusted-logos">
+      <div class="trusted-logo"><span>The FA</span></div>
+      <div class="trusted-logo"><span>PFA | Business School</span></div>
+      <div class="trusted-logo"><span>US Club Soccer</span></div>
+      <div class="trusted-logo"><span>Cornell University</span></div>
+      <div class="trusted-logo"><span><span class="logo-accent">P</span>&nbsp; Purdue University</span></div>
+      <div class="trusted-logo"><span>Miller Insurance</span></div>
+      <div class="trusted-logo"><span>Southampton FC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDER STORY ===== -->
+<section class="founder">
+  <div class="founder-image">
+    <div class="founder-image-placeholder">
+      <span class="jersey-number">10</span>
+    </div>
+  </div>
+  <div class="founder-content">
+    <p class="founder-label">Founder Story</p>
+    <h2 class="founder-title">A Journey That Became a Mission.</h2>
+    <p class="founder-text">I left home at sixteen carrying a pair of football boots. Nearly thirty years later I'm still walking into elite environments helping people become better human beings and better performers. Sweat &amp; Courage was born in the darkest season of my own life. Today it has become a framework used inside professional football, universities and leadership environments.</p>
+    <div class="founder-bottom">
+      <a href="#" class="btn-outline-play">
+        Watch My Story
+        <span class="play-icon"><svg viewBox="0 0 12 12"><polygon points="3,1 10,6 3,11" fill="currentColor"/></svg></span>
+      </a>
+      <div class="founder-signature">
+        <div class="name">Drewe Broughton</div>
+        <div class="role">Founder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOTTOM CTA ===== -->
+<section class="bottom-cta">
+  <div class="container">
+    <div class="bottom-cta-inner">
+      <h3>
+        Every young person deserves leaders who understand people, not just performance.
+        <span>Let's build them together.</span>
+      </h3>
+      <a href="#" class="nav-cta">Book a Conversation <span>&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .nav-links.mobile-open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(10,10,10,0.98);
+      padding: 20px;
+      gap: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+  }
+</style>
+
+</body>
+</html>
